@@ -4,17 +4,34 @@ This repository contains code used for the analysis of single-cell RNA sequencin
 
 ## Data availability
 
-The data generated in this study are available in the Gene Expression Omnibus (GEO): GSE325953, GSE326061  
+The data generated in this study are available in the Gene Expression Omnibus (GEO):
+
+- GSE325953  
+- GSE326061  
 
 ## Analysis overview
 
-The analysis was performed using a preprocessed and annotated Seurat object.
+The analysis was performed using a processed and annotated Seurat object.
 
 The pipeline includes:
 
-- Quality control (QC)
+- Quality-control (QC) visualization
+- SCTransform normalization workflow
+- UMAP visualization
+- Cell-type annotation
 - Cell composition analysis
 - Pseudobulk differential expression analysis (DESeq2)
-- Visualization of gene expression patterns
+- Pathway enrichment analysis (Metascape)
+- Gene-signature scoring (UCell)
+- Ligand–receptor interaction analysis (MultiNicheNet)
+- Source-data export for figure generation
 
+## Main script
 
+analysis_pipeline.R
+
+## Notes
+
+Raw sequencing data were processed using Cell Ranger (10x Genomics) prior to downstream analysis.
+
+This repository provides a simplified and reproducible version of the main analysis workflow used in the study.
