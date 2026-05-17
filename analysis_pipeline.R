@@ -596,18 +596,27 @@ plot_metascape_barplot <- function(
 ############################################################
 # 10b. Gene-signature scoring (UCell)
 ############################################################
+############################################################
+# 10b. Gene-signature scoring (UCell)
+############################################################
 
-# UCell was used to calculate gene-signature
-# enrichment scores in single cells.
+# UCell was used to calculate single-cell
+# gene-signature enrichment scores based on
+# ranked gene-expression profiles.
 
-# Example:
-#
+# Example signatures included cytotoxicity-
+# associated genes in CD4 T cells.
+
 # library(UCell)
 #
 # cytotoxicity_signature <- list(
 #   Cytotoxicity = c(
-#     "Nkg7",
+#     "Eomes",
+#     "Gzmk",
+#     "Ifng",
 #     "Gzmb",
+#     "Gzma",
+#     "Nkg7",
 #     "Prf1"
 #   )
 # )
@@ -616,6 +625,17 @@ plot_metascape_barplot <- function(
 #   seurat_object,
 #   features = cytotoxicity_signature
 # )
+#
+# The resulting UCell scores were used for
+# downstream visualization and comparison
+# between treatment groups.
+#
+# UCell package: https://github.com/carmonalab/UCell
+#
+# Package publication:
+# Andreatta & Carmona, Computational and
+# Structural Biotechnology Journal (2021)
+# https://doi.org/10.1016/j.csbj.2021.06.043
 
 ############################################################
 # 11. Ligand–receptor analysis (MultiNicheNet)
